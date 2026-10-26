@@ -1,0 +1,10 @@
+[package]
+name = "{{PROJECT_NAME}}"
+version = "0.1.0"
+edition = "2021"
+
+# stellar-qk is used as a library for key utilities
+[dependencies]
+stellar-qk = { version = "0.1", default-features = false }
+tokio = { version = "1", features = ["full"] }
+anyhow = "1"

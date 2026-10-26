@@ -1,0 +1,58 @@
+[package]
+name = "stellar-qk"
+version = "0.1.0"
+edition = "2021"
+authors = ["YOUR_ORG <YOUR_CONTACT_EMAIL>"]
+description = "A Rust CLI and library for Stellar developers — keygen, validate, fund, balance, and project scaffolding."
+license = "MIT OR Apache-2.0"
+repository = "https://github.com/YOUR_ORG/stellar-quickstart-kit"
+homepage = "https://github.com/YOUR_ORG/stellar-quickstart-kit"
+documentation = "https://docs.rs/stellar-qk"
+readme = "README.md"
+keywords = ["stellar", "blockchain", "cli", "keypair", "horizon"]
+categories = ["command-line-utilities", "cryptography"]
+rust-version = "1.74"
+
+[[bin]]
+name = "stellar-qk"
+path = "src/main.rs"
+
+[lib]
+name = "stellar_qk"
+path = "src/lib.rs"
+
+[dependencies]
+# CLI argument parsing
+clap = { version = "4.5", features = ["derive", "color"] }
+
+# HTTP client (async, rustls so no OpenSSL dep)
+reqwest = { version = "0.12", default-features = false, features = ["json", "rustls-tls"] }
+
+# Async runtime
+tokio = { version = "1", features = ["full"] }
+
+# JSON serialization/deserialization
+serde = { version = "1", features = ["derive"] }
+serde_json = "1"
+
+# Table pretty-printing
+comfy-table = "7"
+
+# Error handling
+anyhow = "1"
+thiserror = "1"
+
+# Terminal color output
+colored = "2"
+
+# Hex encoding helpers
+hex = "0.4"
+
+[dev-dependencies]
+# No extra test deps needed — stdlib is sufficient
+
+[profile.release]
+opt-level = 3
+lto = true
+codegen-units = 1
+strip = true

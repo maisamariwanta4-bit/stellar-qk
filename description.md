@@ -1,0 +1,1 @@
+A Rust CLI and library for Stellar developers. Generate ed25519 keypairs, validate keys offline, fund Testnet accounts via Friendbot, check Horizon balances, and scaffold starter projects — all from one tool, with no OpenSSL or Stellar SDK required.

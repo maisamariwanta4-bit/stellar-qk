@@ -1,0 +1,44 @@
+name: Feature request
+description: Suggest an idea or improvement
+labels: ["enhancement", "needs-triage"]
+body:
+  - type: markdown
+    attributes:
+      value: |
+        Thanks for taking the time to suggest an improvement!
+        Check the [backlog](../../docs/WAVE_BACKLOG.md) first — your idea might already be tracked.
+
+  - type: textarea
+    id: problem
+    attributes:
+      label: Problem / motivation
+      description: What problem are you trying to solve? What's the use-case?
+    validations:
+      required: true
+
+  - type: textarea
+    id: solution
+    attributes:
+      label: Proposed solution
+      description: Describe the API, CLI flag, or behaviour change you'd like to see.
+    validations:
+      required: true
+
+  - type: textarea
+    id: alternatives
+    attributes:
+      label: Alternatives considered
+      description: Other approaches you thought of and why you ruled them out.
+    validations:
+      required: false
+
+  - type: dropdown
+    id: willing_to_pr
+    attributes:
+      label: Would you like to implement this?
+      options:
+        - "Yes — I'll open a PR"
+        - "Maybe — I could use some guidance"
+        - "No — I'm just requesting it"
+    validations:
+      required: true
